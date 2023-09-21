@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora aritimetica</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Calculadora aritimética</h1>
+      <div class="container">
+        <input
+          type="number"
+          v-model="numero1"
+          @input="calcularResultado"
+          placeholder="0"
+        />
+        <input
+          type="number"
+          v-model="numero2"
+          @input="calcularResultado"
+          placeholder="0"
+        />
+        <select v-model="operacao" @change="calcularResultado">
+          <option value="soma">Somar</option>
+          <option value="subtracao">Subtrair</option>
+          <option value="multiplicacao">Multiplicar</option>
+          <option value="divisao">Dividir</option>
+        </select>
+      </div>
+      <p>{{ resultado}}</p>
+    </div>
+  </body>
+</html>
